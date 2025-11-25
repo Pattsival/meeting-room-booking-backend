@@ -10,8 +10,11 @@ const app = express();
 // 🔧 MIDDLEWARE
 // ============================================
 
-app.use(cors());
-
+app.use(cors({
+  origin: 'https://meeting-room-booking-frontend-eight.vercel.app/',  // ใส่ Frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 // ⭐ เพิ่ม limit สำหรับรองรับ Base64 รูปภาพ (10MB)
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
