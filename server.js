@@ -11,7 +11,7 @@ const app = express();
 // ============================================
 
 app.use(cors({
-  origin: 'https://meeting-room-booking-frontend-eight.vercel.app',  // ใส่ Frontend URL
+  origin: 'http://localhost:3000',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
